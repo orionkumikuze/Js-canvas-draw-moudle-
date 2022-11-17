@@ -27,11 +27,8 @@ keys = {
     space: 32,
     one: 49, two: 50, three: 51, four: 52, five: 53, six: 54, seven: 55, eight: 56, nine: 57, zero: 48
 }
-function write(text,x,y) {
+function draw(text,color,x,y,font) {
     ctx.fillStyle = color
+    ctx.font = font;
     ctx.fillText(text, x, y);
-}
-
-function setFont(font,size) {
-    ctx.font = size + 'px' + font
 }
