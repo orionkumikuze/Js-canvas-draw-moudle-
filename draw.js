@@ -27,6 +27,26 @@ keys = {
     space: 32,
     one: 49, two: 50, three: 51, four: 52, five: 53, six: 54, seven: 55, eight: 56, nine: 57, zero: 48
 }
+function collision(x,y,x2,y2) {
+    let dx = x - x2
+    let dy = y - y2
+    if(dx<50 && dx>-50 && dy<50 && dy>-50) {
+        return "center"
+    }
+    else if(dx<100 && dx>0 && dy<50 && dy>-50) {
+        return "right"
+    }
+    else if(dx<0 && dx>-100 && dy<50 && dy>-50) {
+        return "left"
+    }
+    else if(dx<50 && dx>-50 && dy<0 && dy>-100) {
+        return "up"
+    }
+    else if(dx<50 && dx>-50 && dy<100 && dy>0) {
+        return "down"
+    }
+    return "No"
+}
 function draw(text,color,x,y,font) {
     ctx.fillStyle = color
     ctx.font = font;
